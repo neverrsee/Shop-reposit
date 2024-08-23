@@ -1,0 +1,13 @@
+{% extends "Core/base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block content %} 
+<h1 class="text-center mb-4">Регистрация</h1>
+<form class="d-flex flex-column gap-2 justify-content-center mx-auto" method="post" style="max-width: 300px;"> {% csrf_token %}
+    <input class="form-control" type="text" placeholder="Имя пользователя" minlength="6" maxlength="50" name="username">
+    <input type="email" class="form-control" placeholder="Электронная почта" minlength="6" maxlength="100" name="email">
+    <input type="password" class="form-control" placeholder="Пароль" minlength="8" maxlength="250" name="password">
+    <input type="password" class="form-control" placeholder="Повторить пароль" minlength="8" maxlength="250" name="repeat_password">
+    <button class="btn btn-primary" type="submit">Подтвердить</button>
+</form>
+{% endblock %}

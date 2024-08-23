@@ -1,0 +1,16 @@
+{% extends "Core/base.html" %}
+{% load static %}
+{% block title %} Shop order create {% endblock %}
+{% block content%}
+<div class="d-flex gap-3 flex-wrap justify-content-center mx-auto"style='max-width:300px;'>
+    <div class="d-flex flex-column align-items-start text-center border-0 rounded-4 text-nowrap px-4 py-4" style="width: min-content;box-shadow: 0 0 5px #0002;">
+        <h1 class="">Заказ {{product.name}}</h1>
+        <span class="fs-5">{{product.descript}}</span>
+        <form action="{% url 'order_create' product_id=product.id %}" class="d-flex flex-column justify-content-center mx-auto" method="post">
+            {% csrf_token %}
+            <input type="text" name="adress" class="form-control" required placeholder="адрес доставки">
+            <button type="submit" class="btn fs-4 btn-primary">Заказать</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

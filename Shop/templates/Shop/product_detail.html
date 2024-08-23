@@ -15,10 +15,10 @@
       </span>
       <div class="d-flex gap-1">
         {% for star in 'apple'%}
-        {% if forloop.counter <= product.rating%} <img src="{% static 'shop/img/star.png'%}" alt="" width="20"
+        {% if forloop.counter <= product.rating%} <img src="{% static 'Core/img/star.png'%}" alt="" width="20"
           height="20">
           {% else %}
-          <img src="{% static 'shop/img/star.png'%}" alt="" width="20" height="20" style="filter: grayscale(1);">
+          <img src="{% static 'Core/img/star.png'%}" alt="" width="20" height="20" style="filter: grayscale(1);">
           {% endif %}
           {% endfor %}
       </div>
